@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Reading time",
+  "name": "How much it really costs",
   "version": "1.0",
-  "description": "Add the reading time to Chrome Extension documentation articles",
+  "description": "Converts a number highlighted by a user into how long it would take them to earn that money to reduce snap online purchases.",
   "icons": {
     "16": "images/icon-16.png",
     "32": "images/icon-32.png",
@@ -11,7 +11,11 @@
   },
   "content_scripts": [
     {
-      "js": ["scripts/content.js"]
+      "js": ["scripts/content.js"],
+      "matches" : ["<all_urls>"]
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
 }
