@@ -1,5 +1,4 @@
 function daysAndHoursToEarn(earnings, timePeriod, price) {
-  return new Promise((resolve, reject) => {
     if (earnings <= 0) {
       return "Earnings must be greater than zero.";
     }
@@ -30,8 +29,9 @@ function daysAndHoursToEarn(earnings, timePeriod, price) {
     const days = Math.floor(price / earnings / 8);
     const remainder = price / earnings / 8 - days;
     const hours = Math.floor(remainder * 8);
-    resolve({ days, hours });
-  });
+
+    return {days, hours }
+
 }
 
 // Add an event listener to the 'mouseup' event on the document
@@ -47,7 +47,6 @@ document.addEventListener("mouseup", function (event) {
     if (!isNaN(selectedText)) {
       // Call the daysAndHoursToEarn() function and handle the resolved value with a Promise
       daysAndHoursToEarn(10, "hourly", Number(selectedText))
-        .then(({ days, hours }) => {
           // Display the result in an alert with the resolved value
           alert(
             "Selected number: " +
@@ -57,11 +56,6 @@ document.addEventListener("mouseup", function (event) {
               "\nHours: " +
               hours
           );
-        })
-        .catch((error) => {
-          // Handle any errors that may occur during the Promise execution
-          console.error(error);
-        });
     }
   }
 });
