@@ -1,5 +1,10 @@
 function daysAndHoursToEarn(earnings, timePeriod, price) {
-    if (earnings <= 0) {
+    let testEarnings = localStorage.getItem("earnings")
+    let testFrequency = localStorage.getItem("frequency")
+    console.log(testEarnings)  
+    console.log(testFrequency)  
+
+  if (earnings <= 0) {
       return "Earnings must be greater than zero.";
     }
     if (price <= 0) {
@@ -59,3 +64,4 @@ document.addEventListener("mouseup", function (event) {
     }
   }
 });
+
