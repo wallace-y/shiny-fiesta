@@ -1,4 +1,4 @@
-<html class="popupSize" lang="en">
+<html class="popupSize m-3" lang="en">
   <head>
     <title>Cost PopUp</title>
     <link
@@ -9,13 +9,13 @@
     />
     <link rel="stylesheet" href="popup.css" />
   </head>
-  <body class="popupSize">
-    <form class="input-group m-3">
+  <body class="popupSize p-3 border border-dark rounded">
+    <form class="input-group">
       <div class="">
         <label for="earnings">How much do you earn?</label>
         <input
           id="earnings"
-          class="form-control"
+          class="form-control shadow mb-2"
           type="number"
           name="earnings"
           placeholder="11"
@@ -28,7 +28,7 @@
         <label for="frequency">What frequency</label>
         <input
           id="frequency"
-          class="form-control"
+          class="form-control shadow
           type="text"
           list="mydatalist"
           onchange="inputFunction()"
